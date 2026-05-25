@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>01 · Come funziona la mente di un bambino di 2-3 anni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Palette terrosa */
+    --paper:        #f4ede1;
+    --paper-2:      #efe5d6;
+    --ink:          #2b231c;
+    --ink-soft:     #4a3f34;
+    --ink-faint:    #6f6052;
+    --line:         #d8c9b3;
+    --line-soft:    #e2d6c3;
+    --terra:        #a9522f;   /* terracotta accento */
+    --terra-deep:   #8a3f23;
+    --ochre:        #c08a3e;   /* ocra */
+    --sage:         #6c7256;   /* verde salvia, accento secondario */
+    --clay-bg:      #ece0cd;
+    --shadow:       rgba(74,53,34,.12);
+    --maxw:         720px;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse at 18% -5%, #f7f1e6 0%, transparent 55%),
+      radial-gradient(ellipse at 110% 8%, #efe2cd 0%, transparent 45%),
+      var(--paper);
+    color:var(--ink);
+    font-family:'Inter', system-ui, sans-serif;
+    font-weight:400;
+    font-size:18px;
+    line-height:1.72;
+    letter-spacing:.001em;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  /* Grana sottile */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    pointer-events:none; z-index:1;
+    opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap{
+    position:relative; z-index:2;
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 28px 120px;
+  }
+
+  /* ---------- Intestazione di serie ---------- */
+  .masthead{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:16px;
+    padding:26px 0 0;
+    font-family:'JetBrains Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+  }
+  .masthead .series{display:flex;align-items:center;gap:10px;}
+  .masthead .dot{width:7px;height:7px;border-radius:50%;background:var(--terra);display:inline-block;}
+  .masthead .kind{
+    color:var(--terra-deep);
+    border:1px solid var(--terra);
+    padding:3px 9px;
+    border-radius:100px;
+  }
+
+  /* ---------- Frontespizio ---------- */
+  header.hero{
+    padding:64px 0 50px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:54px;
+  }
+  .num{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px; letter-spacing:.3em;
+    color:var(--terra);
+    margin-bottom:26px;
+  }
+  .num .of{color:var(--ink-faint);}
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:clamp(38px, 7.5vw, 62px);
+    line-height:1.04;
+    letter-spacing:-.018em;
+    margin:0 0 6px;
+    color:var(--ink);
+  }
+  h1 em{font-style:italic; color:var(--terra-deep); font-weight:500;}
+  .subtitle{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(19px, 3.2vw, 24px);
+    line-height:1.45;
+    color:var(--ink-soft);
+    max-width:34ch;
+    margin:22px 0 0;
+  }
+  .deck{
+    margin-top:30px;
+    font-size:16.5px;
+    color:var(--ink-soft);
+    max-width:54ch;
+  }
+
+  /* ---------- Tipografia di corpo ---------- */
+  section{margin:0 0 14px;}
+  h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(25px, 4.4vw, 33px);
+    line-height:1.12;
+    letter-spacing:-.012em;
+    margin:62px 0 4px;
+    color:var(--ink);
+  }
+  h2 .sec-no{
+    display:block;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px; font-weight:500;
+    letter-spacing:.22em;
+    color:var(--terra);
+    margin-bottom:14px;
+    text-transform:uppercase;
+  }
+  h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:21px;
+    letter-spacing:-.005em;
+    margin:40px 0 2px;
+    color:var(--ink);
+  }
+  p{margin:18px 0;}
+  p .lead-cap::first-letter{}
+  strong{font-weight:600; color:var(--ink);}
+  em{font-style:italic;}
+  a{color:var(--terra-deep); text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px;}
+
+  .intro-lead{
+    font-size:20px;
+    line-height:1.6;
+  }
+  /* Capolettera nella prima scena */
+  .scene > p:first-of-type::first-letter{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    float:left;
+    font-size:64px;
+    line-height:.82;
+    padding:8px 12px 0 0;
+    color:var(--terra-deep);
+  }
+
+  /* ---------- Scena di apertura ---------- */
+  .scene{
+    position:relative;
+    background:linear-gradient(180deg, var(--clay-bg), #e6d8c1);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:36px 34px 30px;
+    margin:0 0 18px;
+    box-shadow:0 1px 0 #fff6 inset, 0 18px 40px -28px var(--shadow);
+  }
+  .scene::before{
+    content:"La scena";
+    position:absolute; top:-11px; left:24px;
+    background:var(--terra);
+    color:#fbf3e6;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px; letter-spacing:.18em; text-transform:uppercase;
+    padding:4px 11px; border-radius:100px;
+  }
+  .scene p{font-size:18.5px;}
+  .scene p:last-child{margin-bottom:0;}
+
+  /* ---------- Citazione / aforisma ---------- */
+  blockquote{
+    margin:38px 0;
+    padding:6px 0 6px 26px;
+    border-left:3px solid var(--ochre);
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:22px;
+    line-height:1.4;
+    color:var(--ink-soft);
+  }
+  blockquote cite{
+    display:block;
+    margin-top:10px;
+    font-family:'Inter', sans-serif;
+    font-style:normal;
+    font-size:13.5px;
+    letter-spacing:.04em;
+    color:var(--ink-faint);
+  }
+
+  /* ---------- Box "il suo punto di vista" ---------- */
+  .pov{
+    background:#322a21;
+    color:#ede2d0;
+    border-radius:14px;
+    padding:38px 34px 32px;
+    margin:40px 0;
+    position:relative;
+    box-shadow:0 24px 50px -30px rgba(43,35,28,.6);
+  }
+  .pov::before{
+    content:"Dal suo punto di vista";
+    position:absolute; top:-11px; left:24px;
+    background:var(--ochre);
+    color:#2b231c;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px; letter-spacing:.16em; text-transform:uppercase;
+    padding:4px 11px; border-radius:100px;
+    font-weight:500;
+  }
+  .pov h3{color:#f4ead8; margin-top:26px;}
+  .pov p{color:#ddd0bd;}
+  .pov strong{color:#fff;}
+  .pov em{color:#f0c98a;}
+  .pov p:last-child{margin-bottom:0;}
+
+  /* ---------- Nota a margine / dissenso scientifico ---------- */
+  .aside{
+    border:1px dashed var(--line);
+    border-radius:12px;
+    background:#f7f0e3;
+    padding:22px 24px;
+    margin:34px 0;
+    font-size:16px;
+    color:var(--ink-soft);
+  }
+  .aside .tag{
+    display:inline-block;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--sage);
+    border:1px solid var(--sage);
+    padding:2px 9px; border-radius:100px;
+    margin-bottom:12px;
+  }
+  .aside p{margin:8px 0;}
+  .aside p:first-of-type{margin-top:0;}
+  .aside p:last-child{margin-bottom:0;}
+
+  /* ---------- Punti chiave ---------- */
+  .keys{
+    margin:30px 0 10px;
+    counter-reset:k;
+    list-style:none; padding:0;
+  }
+  .keys li{
+    position:relative;
+    padding:18px 4px 18px 52px;
+    border-bottom:1px solid var(--line-soft);
+    font-size:17px;
+    line-height:1.55;
+  }
+  .keys li:last-child{border-bottom:none;}
+  .keys li::before{
+    counter-increment:k;
+    content:counter(k, decimal-leading-zero);
+    position:absolute; left:0; top:18px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px; font-weight:500;
+    color:var(--terra);
+  }
+
+  /* ---------- Per approfondire ---------- */
+  .reads{margin:24px 0;}
+  .read{
+    display:flex; gap:16px; align-items:baseline;
+    padding:16px 0;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .read:last-child{border-bottom:none;}
+  .read .lvl{
+    flex:0 0 auto;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+    padding:4px 8px; border-radius:6px;
+    white-space:nowrap;
+    margin-top:3px;
+  }
+  .lvl.div{background:#e7ecd9; color:var(--sage);}
+  .lvl.spec{background:#f0ddd1; color:var(--terra-deep);}
+  .read .body .t{font-family:'Fraunces',serif; font-weight:600; font-size:17px;}
+  .read .body .d{font-size:14.5px; color:var(--ink-faint); margin-top:2px;}
+
+  /* ---------- Regole / separatori ---------- */
+  .rule{
+    border:none; height:1px;
+    background:linear-gradient(90deg, transparent, var(--line) 18%, var(--line) 82%, transparent);
+    margin:56px 0;
+  }
+  .ornament{
+    text-align:center; margin:50px 0;
+    color:var(--ochre); font-size:18px; letter-spacing:1.4em;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    margin-top:80px; padding-top:30px;
+    border-top:1px solid var(--line);
+    font-family:'JetBrains Mono', monospace;
+    font-size:11.5px; letter-spacing:.08em;
+    color:var(--ink-faint);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+  }
+  footer .next{color:var(--terra-deep);}
+
+  /* inline mono per termini tecnici */
+  .term{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.86em;
+    background:#ece0cd;
+    padding:1px 6px; border-radius:5px;
+    color:var(--terra-deep);
+  }
+
+  ::selection{background:var(--ochre); color:#2b231c;}
+
+  @media (max-width:560px){
+    body{font-size:17px;}
+    .wrap{padding:0 20px 90px;}
+    .scene,.pov{padding-left:24px; padding-right:24px;}
+    .scene > p:first-of-type::first-letter{font-size:52px;}
+  }
+
+  /* Reveal animato al caricamento */
+  @media (prefers-reduced-motion:no-preference){
+    .reveal{opacity:0; transform:translateY(14px); animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards;}
+    @keyframes rise{to{opacity:1; transform:none;}}
+    header.hero .num{animation-delay:.05s;}
+    header.hero h1{animation-delay:.12s;}
+    header.hero .subtitle{animation-delay:.22s;}
+    header.hero .deck{animation-delay:.32s;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <span class="series"><span class="dot"></span>La mente di un bambino di 2-3 anni</span>
+    <span class="kind">Report teorico</span>
+  </div>
+
+  <header class="hero">
+    <div class="num reveal">01 <span class="of">/ 23 — Parte I · Le fondamenta</span></div>
+    <h1 class="reveal">Come funziona la mente <em>di un bambino di due, tre anni</em></h1>
+    <p class="subtitle reveal">Cosa può fare, cosa non può ancora fare — e perché non è questione di volontà.</p>
+    <p class="deck reveal">Prima di imparare a parlargli, conviene capire con chi stiamo parlando. Non un adulto distratto, non un piccolo manipolatore: un cervello in piena costruzione, che vive il mondo in un modo che da tempo abbiamo dimenticato. Questo è il primo mattone di tutto il resto.</p>
+  </header>
+
+  <!-- ============ APERTURA: LA SCENA ============ -->
+  <section class="scene">
+    <p>Sono le sette di sera. Gli hai detto tre volte, con calma, che è ora di mettere via i giochi e andare a fare il bagnetto. Lui ti guarda — ti guarda davvero, negli occhi — e poi prende un'altra macchinina e la fa rotolare sul pavimento, come se non avessi parlato.</p>
+    <p>A questo punto succede qualcosa nella tua testa. Una vocina dice: <em>mi ha sentito benissimo. Lo fa apposta. Mi sta sfidando.</em> È una storia plausibile. È anche, quasi certamente, sbagliata.</p>
+    <p>Per capire cosa è successo davvero in quei secondi, dobbiamo aprire il cofano e guardare dentro. Non il suo comportamento: la sua mente.</p>
+  </section>
+
+  <p class="intro-lead">Questo report fa una cosa sola, ma è la più importante di tutta la serie: <strong>ti dà un modello realistico di come funziona la sua mente a questa età.</strong> Non per scusare tutto, non per arrenderti. Al contrario — perché quasi tutti i fraintendimenti tra te e lui nascono da un'aspettativa sbagliata su ciò che il suo cervello può fare. Una volta aggiustata l'aspettativa, metà dei conflitti cambia forma.</p>
+
+  <p>L'errore di fondo ha un nome: trattarlo come <em>un adulto in miniatura</em>. Uno che ragiona come noi, ma più piccolo e con meno esperienza. Da lì discende tutto il resto: "capisce ma fa finta di niente", "lo fa per attirare l'attenzione", "se ci riesce quando vuole, allora può sempre". Sono frasi che hanno senso solo se dentro di lui c'è un adulto. Ma non c'è. C'è qualcos'altro, e vale la pena conoscerlo.</p>
+
+  <!-- ============ IL QUADRO ============ -->
+  <h2><span class="sec-no">Il quadro · cosa dice la scienza</span>Un cantiere, non una casa finita</h2>
+
+  <p>Immagina il suo cervello come un edificio in costruzione. Le fondamenta — quelle che gestiscono emozioni, allarme, sopravvivenza, attaccamento — sono state gettate prestissimo e funzionano a pieno regime. È il piano nobile a mancare ancora: la <span class="term">corteccia prefrontale</span>, la parte che pianifica, aspetta, inibisce gli impulsi, tiene a freno le emozioni e ragiona sulle conseguenze.</p>
+
+  <p>Questa zona è tra le ultime a maturare nello sviluppo umano: il suo sviluppo prosegue lungo tutta l'infanzia e l'adolescenza, e si completa solo intorno ai vent'anni. A due o tre anni è, in pratica, un cantiere appena avviato. Nel frattempo il <span class="term">sistema limbico</span> — il centro emotivo, con l'amigdala in prima fila — è già acceso, reattivo, potente. La conseguenza è semplice e cambia tutto: <strong>a questa età l'emozione arriva forte e veloce, e il freno per gestirla non è ancora installato.</strong></p>
+
+  <p>Quando gli chiedi di smettere di giocare per andare nella vasca, non stai parlando con il pianificatore razionale. Stai parlando con un sistema che vive l'interruzione del gioco come una piccola perdita reale, e che non ha ancora gli strumenti interni per dirsi "vabbè, dai, il bagnetto è anche piacevole, e comunque domani gioco ancora". Quegli strumenti li sta costruendo. Adesso. Con te.</p>
+
+  <h3>La memoria di lavoro: una scrivania minuscola</h3>
+
+  <p>C'è poi un secondo limite, meno intuitivo ma altrettanto decisivo. La <span class="term">memoria di lavoro</span> — lo spazio mentale in cui teniamo "attive" le informazioni mentre le usiamo — a questa età è davvero ridotta. Le ricerche stimano che <strong>un bambino tra i tre e i quattro anni riesca a tenere a mente più o meno uno o due elementi alla volta</strong>, contro i tre-quattro di un adulto.</p>
+
+  <p>Pensa a una scrivania molto piccola: ci sta un foglio, forse due. Se ne appoggi un terzo, qualcosa cade per terra. Ora rileggi la tua istruzione: <em>"metti via i giochi, andiamo in bagno, ci facciamo il bagnetto"</em>. Per te è una frase sola. Per lui sono almeno tre fogli sulla scrivania — più l'emozione di dover smettere di giocare, che è un quarto foglio e per giunta pesante. Qualcosa cade. Spesso è proprio la parte "fai" della frase.</p>
+
+  <div class="aside">
+    <span class="tag">Dove la scienza non è unanime</span>
+    <p>Qui la ricerca è più ricca di sfumature di quanto sembri. Un dato curioso: in certi compiti i bambini di un anno paiono ricordare <em>più</em> oggetti dei bambini di tre o quattro. Il paradosso si scioglie quando si capisce che la memoria di lavoro non è un semplice "numero di caselle" fisse, ma una <strong>risorsa limitata che va distribuita</strong>: più un compito chiede di scegliere, inibire, parlare, meno ne resta per ricordare.</p>
+    <p>La lezione pratica non cambia, anzi si rafforza: ogni elemento in più che aggiungi — una parola complicata, un'emozione forte, una distrazione — gli mangia capacità. Non è pigrizia. È banda passante che finisce.</p>
+  </div>
+
+  <h3>Piaget, rivisto: come ragiona davvero</h3>
+
+  <p>Per quasi un secolo il riferimento è stato Jean Piaget, che chiamò questa fase <span class="term">pensiero pre-operatorio</span> e la descrisse con tre tratti diventati famosi: l'<strong>egocentrismo</strong> (fatica a vedere le cose dal punto di vista di un altro), l'<strong>animismo</strong> (le cose hanno intenzioni e sentimenti) e il <strong>pensiero magico</strong> (i nessi causa-effetto sono ancora elastici). Restano descrizioni utili — ma la ricerca degli ultimi decenni le ha parecchio ammorbidite.</p>
+
+  <p>"Egocentrismo" suona come egoismo; in realtà Piaget intendeva un <em>limite cognitivo</em>: la difficoltà a tenere insieme due prospettive diverse contemporaneamente. E qui i suoi tempi si sono rivelati troppo pessimisti. Oggi sappiamo che già verso i due anni e mezzo, quando il compito viene reso semplice e poco "verboso", molti bambini mostrano di intuire che un altro può avere in testa un'idea diversa dalla loro. Il problema non è che non gli importa di te. È che <strong>coordinare la tua prospettiva con la sua costa moltissima energia mentale</strong> — e nei momenti carichi quell'energia non c'è.</p>
+
+  <blockquote>
+    Il bambino non è un vaso da riempire, ma un fuoco da accendere.
+    <cite>— attribuito a vari autori; resta una buona bussola</cite>
+  </blockquote>
+
+  <h3>La teoria della mente, in costruzione</h3>
+
+  <p>Quella capacità di immaginare cosa passa per la testa di un altro — che sappia o non sappia una cosa, che voglia qualcosa di diverso da te — si chiama <span class="term">teoria della mente</span>, e a questa età è proprio in piena fioritura. Non è un interruttore che a un certo giorno si accende: è un continuo, che parte da forme implicite molto precoci e arriva solo più tardi a una comprensione piena e verbalizzabile.</p>
+
+  <p>Tradotto: il bambino davanti a te a volte <em>sembra</em> capire cosa provi, e altre volte sembra del tutto cieco al tuo stato d'animo. Non è incoerenza, non è capriccio. È un sistema che funziona a intermittenza, e che crolla per primo proprio quando lui è stanco, affamato o sopraffatto — cioè esattamente nei momenti in cui a noi servirebbe di più che ci capisse.</p>
+
+  <div class="aside">
+    <span class="tag">Il dibattito in corso</span>
+    <p>Sulla teoria della mente i ricercatori discutono ancora animatamente. Una linea sostiene che esista una forma <em>implicita</em>, precocissima, già nel secondo anno; un'altra è più cauta e nota che i risultati cambiano molto a seconda di come è costruito il test. La distinzione tra "capire implicitamente" e "saperlo dire" non è ancora del tutto risolta.</p>
+    <p>Per noi genitori la sostanza tiene comunque: <strong>non dare per scontato che, in un momento difficile, lui riesca a mettersi nei tuoi panni.</strong> A volte ci arriva. Spesso, soprattutto sotto stress, no.</p>
+  </div>
+
+  <h3>Il "no" e la nascita del sé</h3>
+
+  <p>C'è una ragione profonda dietro l'esplosione dei "no" tra i due e i tre anni, e non è il dispetto. In questo periodo emerge con forza il senso di sé: la scoperta vertiginosa di essere <em>qualcuno</em>, separato, con una volontà propria. Dire "no" è il modo più immediato e potente che ha per sperimentare questa novità. Ogni "no" è, in fondo, un piccolo esperimento: <em>esisto? la mia volontà conta? cosa succede se spingo?</em></p>
+
+  <p>Visto così, il "no" non è un attacco a te. È una dichiarazione su di sé. Erikson la inquadrava come la tensione di questa età tra <strong>autonomia e vergogna</strong>: il bambino ha bisogno di esercitare la propria volontà per costruire fiducia in sé, e il modo in cui rispondiamo a quei "no" lascia un segno su quanto si sentirà, crescendo, capace e legittimato a volere.</p>
+
+  <h3>Il tempo: vive in un presente enorme</h3>
+
+  <p>Infine, il tempo — forse il malinteso più sottovalutato. Per lui "dopo", "fra cinque minuti", "domani" sono parole quasi vuote. La capacità di rappresentarsi il futuro e collocare gli eventi su una linea temporale è ancora rudimentale. Vive in un <strong>presente espanso</strong>, dove l'adesso occupa quasi tutto lo spazio.</p>
+
+  <p>Per questo "fra cinque minuti spegniamo la TV" non funziona come credi: non è che ti ignora, è che quei cinque minuti non significano granché. E per questo l'attesa è così dolorosa: quando vuole una cosa adesso e gli dici "dopo", per lui non è un rinvio ragionevole, è un <em>no</em> travestito, in un momento in cui il desiderio è tutto ciò che esiste.</p>
+
+  <!-- ============ IL SUO PUNTO DI VISTA ============ -->
+  <div class="pov">
+    <p>Torniamo alla scena di prima, ma stavolta da dentro. Sei tu, ed hai due anni e mezzo.</p>
+    <h3>La macchinina rossa è perfetta proprio adesso</h3>
+    <p>Stai facendo la cosa più importante del mondo: la macchinina rossa rotola e tu la guardi rotolare, ed è bellissimo. Tutto te stesso è lì dentro. C'è un suono di fondo — la voce calda che ami — ma le parole arrivano come da lontano, e dentro la tua piccola scrivania mentale, già piena della macchinina e di quanto è bella, non c'è davvero posto per loro.</p>
+    <p>Poi capisci che la voce vuole che <em>smetti</em>. E qui dentro qualcosa si stringe. Smettere fa male — non come un capriccio, ma come una piccola perdita vera. Non hai le parole per dirlo. Non hai il freno per ammorbidirlo. Non hai il "dopo" per consolarti. Hai solo l'adesso, e l'adesso è <strong>macchinina-bella-che-non-voglio-lasciare</strong>.</p>
+    <p>Allora prendi un'altra macchinina. Non per sfidare nessuno. È il modo in cui il tuo corpo dice: <em>resto qui ancora un attimo, perché lasciare è troppo.</em></p>
+  </div>
+
+  <p>Questo è il punto di tutta la serie, in miniatura. Lo stesso identico fatto — lui che prende un'altra macchinina dopo che gli hai parlato — racconta due storie opposte a seconda da dove lo guardi. Dall'esterno: <em>mi sfida</em>. Dal suo interno: <em>l'istruzione non è entrata, l'emozione l'ha riempito, e non ha gli strumenti per fare diversamente</em>. Solo una delle due storie ti permette di aiutarlo davvero.</p>
+
+  <!-- ============ IMPLICAZIONI ============ -->
+  <h2><span class="sec-no">Implicazioni · cosa cambia per te</span>Cinque spostamenti che cambiano tutto</h2>
+
+  <p>Capire questo modello non è un esercizio teorico. Cambia, in modo molto concreto, come ti poni nei momenti difficili. Ecco dove va a incidere.</p>
+
+  <p><strong>Una istruzione alla volta.</strong> Se la sua scrivania mentale tiene uno o due fogli, smetti di dargliene tre. Non "metti via i giochi, andiamo in bagno e ci laviamo", ma una cosa sola, concreta, alla volta. È un tema che riprenderemo nel report pratico sul <em>come parlare in modo che ti capisca</em> (n. 08), ma puoi già notare quanto spesso, senza accorgertene, gli chiedi più di quanto possa reggere.</p>
+
+  <p><strong>Niente spiegazioni nel mezzo della tempesta.</strong> Quando è sopraffatto, il piano nobile del suo cervello è offline. Le tue ragioni — pur giustissime — bussano a una porta dietro cui non c'è nessuno. Prima si rassicura il sistema emotivo, le spiegazioni vengono dopo. Su questo torneremo a lungo nei report sulla co-regolazione e sui meltdown (parte V).</p>
+
+  <p><strong>Il tempo va reso visibile.</strong> Siccome "dopo" non significa nulla, conviene appoggiarlo a qualcosa di concreto: un timer che suona, "quando finisce la canzone", "ancora due giri di macchinina e poi". Non per ingannarlo: per dargli un appiglio in un tempo che altrimenti non sa misurare.</p>
+
+  <p><strong>Il "no" come bisogno, non come affronto.</strong> Dietro a molti suoi rifiuti c'è la spinta sana a essere qualcuno. Puoi tenere il limite <em>e</em> rispettare quella spinta — offrendo scelte vere ma circoscritte ("la maglietta blu o quella verde?"), che gli danno volontà senza farti perdere la rotta.</p>
+
+  <p><strong>Abbassare l'aspettativa, non lo standard.</strong> Attenzione: nulla di tutto questo significa "lascia perdere, tanto è piccolo". I limiti servono, eccome — ne parleremo molto. Significa solo smettere di pretendere capacità che ancora non possiede, e aiutarlo a fare ciò che da solo non riesce. È la differenza tra spingere un bambino che non sa ancora camminare e tenergli la mano mentre impara.</p>
+
+  <hr class="rule">
+
+  <!-- ============ PUNTI CHIAVE ============ -->
+  <h2><span class="sec-no">In sintesi</span>I punti chiave</h2>
+
+  <ol class="keys">
+    <li>Il suo cervello è un <strong>cantiere</strong>: le aree emotive sono già potentissime, quella che pianifica e frena è ancora in costruzione e lo resterà per anni.</li>
+    <li>La sua <strong>memoria di lavoro</strong> tiene circa uno-due elementi alla volta. Istruzioni lunghe o multiple semplicemente non entrano, e l'emozione occupa ulteriore spazio.</li>
+    <li>L'"egocentrismo" di Piaget non è egoismo, ma un <strong>limite cognitivo</strong>: coordinare la sua prospettiva con la tua è faticosissimo, e crolla per primo sotto stress.</li>
+    <li>La <strong>teoria della mente</strong> è in piena costruzione e funziona a intermittenza: a volte ti capisce, spesso — proprio nei momenti difficili — no.</li>
+    <li>L'esplosione dei <strong>"no"</strong> è la nascita del sé, non un attacco a te: è il modo in cui sperimenta di avere una volontà propria.</li>
+    <li>Vive in un <strong>presente espanso</strong>: "dopo" e "fra cinque minuti" sono quasi privi di significato. Il tempo va reso concreto e visibile.</li>
+    <li>"Capisce ma fa finta di niente" è quasi sempre falso: di solito o <strong>non ha capito</strong>, o non riesce a fare ciò che gli chiedi. Cambiare questa lettura cambia tutto il resto.</li>
+  </ol>
+
+  <div class="ornament">· · ·</div>
+
+  <!-- ============ PER APPROFONDIRE ============ -->
+  <h2><span class="sec-no">Per approfondire</span>Se vuoi andare più a fondo</h2>
+
+  <div class="reads">
+    <div class="read">
+      <span class="lvl div">Divulgativo</span>
+      <div class="body">
+        <div class="t">D. Siegel & T. Payne Bryson — <em>12 strategie rivoluzionarie per favorire lo sviluppo mentale del bambino</em></div>
+        <div class="d">Il modo più accessibile per visualizzare il "cervello in costruzione" e la differenza tra piano emotivo e piano razionale. Molto pratico, ottimo punto di partenza.</div>
+      </div>
+    </div>
+    <div class="read">
+      <span class="lvl div">Divulgativo</span>
+      <div class="body">
+        <div class="t">A. Gopnik — <em>Il bambino filosofo</em></div>
+        <div class="d">Ribalta l'idea del bambino come adulto incompleto: lo presenta come un piccolo scienziato dalla coscienza espansa, con una mente diversa, non inferiore. Cambia lo sguardo.</div>
+      </div>
+    </div>
+    <div class="read">
+      <span class="lvl spec">Specialistico</span>
+      <div class="body">
+        <div class="t">D. Stern — <em>Il mondo interpersonale del bambino</em></div>
+        <div class="d">Un classico sulla costruzione del sé e dell'esperienza nei primi anni. Più impegnativo, ma illuminante su come emerge il senso di essere "qualcuno".</div>
+      </div>
+    </div>
+    <div class="read">
+      <span class="lvl spec">Specialistico</span>
+      <div class="body">
+        <div class="t">H. Wellman et al. — meta-analisi sulla teoria della mente e la falsa credenza</div>
+        <div class="d">Per chi vuole vedere i dati dietro al dibattito implicito/esplicito: quanto e quando i bambini capiscono le menti altrui, e perché i test danno risultati così diversi.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>La mente di un bambino di 2-3 anni · Report 01 di 23</span>
+    <span class="next">Prossimo → 02 · Cosa lo muove davvero</span>
+  </footer>
+
+</div>
+</body>
+</html>

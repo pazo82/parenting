@@ -1,0 +1,232 @@
+[
+  {
+    "id": 1,
+    "parte": "I",
+    "tipo": "teorico",
+    "titolo": "Come funziona la mente <em>di un bambino di 2–3 anni</em>",
+    "titolo_plain": "Come funziona la mente di un bambino di 2–3 anni",
+    "descrizione": "Le basi neurocognitive: cosa può fare, cosa non può ancora fare, e perché. Smontare l'illusione che "capisca ma faccia finta di niente".",
+    "link": "report-01.html",
+    "disponibile": true
+  },
+  {
+    "id": 2,
+    "parte": "I",
+    "tipo": "teorico",
+    "titolo": "Bisogni, motivazioni, priorità: <em>cosa lo muove davvero</em>",
+    "titolo_plain": "Bisogni, motivazioni, priorità: cosa lo muove davvero",
+    "descrizione": "Dietro ogni comportamento c'è una motivazione. Riconoscerla è la chiave per non leggere male tutto.",
+    "link": "report-02.html",
+    "disponibile": false
+  },
+  {
+    "id": 3,
+    "parte": "I",
+    "tipo": "teorico",
+    "titolo": "Il mondo visto da lui: <em>fenomenologia del bambino di 2–3 anni</em>",
+    "titolo_plain": "Il mondo visto da lui: fenomenologia del bambino di 2–3 anni",
+    "descrizione": "Una visita guidata dentro la sua esperienza. Come gli appaiono le cose, le persone, il tempo, te.",
+    "link": "report-03.html",
+    "disponibile": false
+  },
+  {
+    "id": 4,
+    "parte": "I",
+    "tipo": "pratico",
+    "titolo": "Mettersi nei suoi panni: <em>esercizi di prospettiva quotidiana</em>",
+    "titolo_plain": "Mettersi nei suoi panni: esercizi di prospettiva quotidiana",
+    "descrizione": "Strumenti concreti per allenarti a vedere le situazioni dal suo punto di vista.",
+    "link": "report-04.html",
+    "disponibile": false
+  },
+  {
+    "id": 5,
+    "parte": "II",
+    "tipo": "teorico",
+    "titolo": "Come lui comunica: <em>i suoi messaggi, espliciti e nascosti</em>",
+    "titolo_plain": "Come lui comunica: i suoi messaggi, espliciti e nascosti",
+    "descrizione": "A questa età le parole non sono il canale principale nemmeno per lui. Imparare a leggere il resto.",
+    "link": "report-05.html",
+    "disponibile": false
+  },
+  {
+    "id": 6,
+    "parte": "II",
+    "tipo": "pratico",
+    "titolo": "Decifrarlo: <em>trucchi per leggere quello che ti sta dicendo</em>",
+    "titolo_plain": "Decifrarlo: trucchi per leggere quello che ti sta dicendo",
+    "descrizione": "Un decoder pratico: dato un segnale, capire cosa probabilmente significa.",
+    "link": "report-06.html",
+    "disponibile": false
+  },
+  {
+    "id": 7,
+    "parte": "III",
+    "tipo": "teorico",
+    "titolo": "Come interpreta il linguaggio: <em>cosa capisce, cosa fraintende</em>",
+    "titolo_plain": "Come interpreta il linguaggio: cosa capisce, cosa fraintende",
+    "descrizione": "Le parole sono solo la punta dell'iceberg. E spesso sono la parte che capisce meno.",
+    "link": "report-07.html",
+    "disponibile": false
+  },
+  {
+    "id": 8,
+    "parte": "III",
+    "tipo": "pratico",
+    "titolo": "Parlare in modo che ti capisca: <em>frasi, lunghezza, ritmo</em>",
+    "titolo_plain": "Parlare in modo che ti capisca: frasi, lunghezza, ritmo",
+    "descrizione": "Trucchi concreti per riformulare quello che dici. Da provare oggi stesso.",
+    "link": "report-08.html",
+    "disponibile": false
+  },
+  {
+    "id": 9,
+    "parte": "III",
+    "tipo": "teorico",
+    "titolo": "I canali della comunicazione: <em>tono, gesto, sguardo, parola</em>",
+    "titolo_plain": "I canali della comunicazione: tono, gesto, sguardo, parola",
+    "descrizione": "A 2–3 anni le parole pesano forse il 20%. Il resto sei tu.",
+    "link": "report-09.html",
+    "disponibile": false
+  },
+  {
+    "id": 10,
+    "parte": "III",
+    "tipo": "pratico",
+    "titolo": "Il corpo prima delle parole: <em>postura, tono e contatto</em>",
+    "titolo_plain": "Il corpo prima delle parole: postura, tono e contatto",
+    "descrizione": "Come usare il tuo corpo come strumento di comunicazione consapevole.",
+    "link": "report-10.html",
+    "disponibile": false
+  },
+  {
+    "id": 11,
+    "parte": "III",
+    "tipo": "teorico",
+    "titolo": "Voce autoritaria, voce consolatoria, <em>voce della fiducia</em>",
+    "titolo_plain": "Voce autoritaria, voce consolatoria, voce della fiducia",
+    "descrizione": "Come decodifica le tue intenzioni, e perché "essere fermi" non è uguale a "essere severi".",
+    "link": "report-11.html",
+    "disponibile": false
+  },
+  {
+    "id": 12,
+    "parte": "IV",
+    "tipo": "teorico",
+    "titolo": "Dire "no", dire "basta": <em>come lui percepisce i limiti</em>",
+    "titolo_plain": "Dire \"no\", dire \"basta\": come lui percepisce i limiti",
+    "descrizione": "Il limite non è una negazione del bambino. È una delle cose di cui ha più bisogno. Ma deve essere dato bene.",
+    "link": "report-12.html",
+    "disponibile": false
+  },
+  {
+    "id": 13,
+    "parte": "IV",
+    "tipo": "pratico",
+    "titolo": "Tecniche pratiche per i limiti: <em>alternative al ricatto e all'urlo</em>",
+    "titolo_plain": "Tecniche pratiche per i limiti: alternative al ricatto e all'urlo",
+    "descrizione": "Frasari, strategie e copioni per situazioni precise. Come dire "basta TV", "basta biscotti", "non si fa".",
+    "link": "report-13.html",
+    "disponibile": false
+  },
+  {
+    "id": 14,
+    "parte": "IV",
+    "tipo": "teorico",
+    "titolo": "La severità: <em>quando serve, quando danneggia, come dosarla</em>",
+    "titolo_plain": "La severità: quando serve, quando danneggia, come dosarla",
+    "descrizione": "Forse il tema più controverso. Una zona dove dogmatismi opposti si fronteggiano e la realtà sta nel mezzo.",
+    "link": "report-14.html",
+    "disponibile": false
+  },
+  {
+    "id": 15,
+    "parte": "IV",
+    "tipo": "pratico",
+    "titolo": "Farsi prendere sul serio <em>senza spaventare</em>",
+    "titolo_plain": "Farsi prendere sul serio senza spaventare",
+    "descrizione": "Come segnalare "questo è serio" senza ricorrere a urla o paura.",
+    "link": "report-15.html",
+    "disponibile": false
+  },
+  {
+    "id": 16,
+    "parte": "V",
+    "tipo": "teorico",
+    "titolo": "Quando ascolta davvero: <em>ricettività e finestra di tolleranza</em>",
+    "titolo_plain": "Quando ascolta davvero: ricettività e finestra di tolleranza",
+    "descrizione": "Non sempre è in grado di ascoltarti. Capire il perché è metà del lavoro.",
+    "link": "report-16.html",
+    "disponibile": false
+  },
+  {
+    "id": 17,
+    "parte": "V",
+    "tipo": "pratico",
+    "titolo": "Creare i momenti giusti: <em>rituali, transizioni, anticipazioni</em>",
+    "titolo_plain": "Creare i momenti giusti: rituali, transizioni, anticipazioni",
+    "descrizione": "Come ingegnerizzare la giornata per moltiplicare i momenti di vera connessione.",
+    "link": "report-17.html",
+    "disponibile": false
+  },
+  {
+    "id": 18,
+    "parte": "V",
+    "tipo": "teorico",
+    "titolo": "Rabbia, frustrazione, capricci: <em>cosa succede dentro di lui</em>",
+    "titolo_plain": "Rabbia, frustrazione, capricci: cosa succede dentro di lui",
+    "descrizione": "Visto da dentro, non è un capriccio. È un terremoto che non sa gestire.",
+    "link": "report-18.html",
+    "disponibile": false
+  },
+  {
+    "id": 19,
+    "parte": "V",
+    "tipo": "teorico",
+    "titolo": "Le emozioni e la co-regolazione: <em>come funziona davvero</em>",
+    "titolo_plain": "Le emozioni e la co-regolazione: come funziona davvero",
+    "descrizione": "Prima di autoregolarsi devono regolarsi con te. Per anni.",
+    "link": "report-19.html",
+    "disponibile": false
+  },
+  {
+    "id": 20,
+    "parte": "V",
+    "tipo": "pratico",
+    "titolo": "Aiutarlo a gestire le emozioni: <em>strumenti quotidiani</em>",
+    "titolo_plain": "Aiutarlo a gestire le emozioni: strumenti quotidiani",
+    "descrizione": "Pratiche concrete per costruire, giorno dopo giorno, la sua intelligenza emotiva.",
+    "link": "report-20.html",
+    "disponibile": false
+  },
+  {
+    "id": 21,
+    "parte": "V",
+    "tipo": "pratico",
+    "titolo": "Sopravvivere alla tempesta: <em>cosa dire (e non dire) in crisi</em>",
+    "titolo_plain": "Sopravvivere alla tempesta: cosa dire (e non dire) in crisi",
+    "descrizione": "Un manuale di emergenza, da rileggere prima del prossimo capriccio.",
+    "link": "report-21.html",
+    "disponibile": false
+  },
+  {
+    "id": 22,
+    "parte": "VI",
+    "tipo": "teorico",
+    "titolo": "Temperamento, attaccamento, gioco: <em>la cornice che cambia tutto</em>",
+    "titolo_plain": "Temperamento, attaccamento, gioco: la cornice che cambia tutto",
+    "descrizione": "Non esiste un manuale universale. Esiste lui, e voi insieme.",
+    "link": "report-22.html",
+    "disponibile": false
+  },
+  {
+    "id": 23,
+    "parte": "VI",
+    "tipo": "pratico",
+    "titolo": "Compendio operativo: <em>principi, frasari, errori da evitare</em>",
+    "titolo_plain": "Compendio operativo: principi, frasari, errori da evitare",
+    "descrizione": "Tutto quello che serve, in un unico posto. Da tenere a portata di mano.",
+    "link": "report-23.html",
+    "disponibile": false
+  }
+]

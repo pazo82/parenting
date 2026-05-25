@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La mente di un bambino · Una serie di report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream:       #f5f0e8;
+      --cream-dark:  #ede5d4;
+      --paper:       #faf7f2;
+      --ink:         #2b2520;
+      --ink-soft:    #5c4f45;
+      --ink-faint:   #9c8c82;
+      --rust:        #b8522a;
+      --rust-light:  #d4784e;
+      --rust-pale:   #f0d8cc;
+      --sage:        #5a7a5c;
+      --sage-pale:   #d4e4d5;
+      --line:        rgba(43,37,32,0.12);
+      --serif: 'Fraunces', Georgia, serif;
+      --sans:  'Inter', system-ui, sans-serif;
+      --r-sm: 4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HEADER */
+    .site-header {
+      padding: 72px 0 56px;
+      border-bottom: 1px solid var(--line);
+    }
+    .header-eyebrow {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 20px;
+    }
+    .header-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.12;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .header-title em {
+      font-style: italic;
+      color: var(--rust);
+    }
+    .header-subtitle {
+      font-family: var(--serif);
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--ink-soft);
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+    .header-intro {
+      margin-top: 28px;
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+    .legend {
+      display: flex;
+      gap: 20px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+    }
+
+    /* SECTIONS */
+    .part-section {
+      margin-top: 56px;
+      animation: fadeUp 0.5s ease both;
+    }
+    .part-section:first-of-type { margin-top: 48px; }
+    .part-section:nth-child(1) { animation-delay: 0.05s; }
+    .part-section:nth-child(2) { animation-delay: 0.12s; }
+    .part-section:nth-child(3) { animation-delay: 0.19s; }
+    .part-section:nth-child(4) { animation-delay: 0.26s; }
+    .part-section:nth-child(5) { animation-delay: 0.33s; }
+    .part-section:nth-child(6) { animation-delay: 0.40s; }
+
+    .part-label {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 6px;
+    }
+    .part-number {
+      font-family: var(--serif);
+      font-size: 0.72rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ink-faint);
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+    .part-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--ink);
+    }
+    .part-description {
+      font-size: 0.82rem;
+      color: var(--ink-faint);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .part-divider {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin-bottom: 4px;
+    }
+
+    /* CARDS */
+    .report-list { display: flex; flex-direction: column; }
+
+    .report-card {
+      display: grid;
+      grid-template-columns: 44px 1fr auto;
+      gap: 0 16px;
+      align-items: start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      border-radius: var(--r-sm);
+      transition: background 0.15s, padding 0.15s;
+    }
+    .report-card.available { cursor: pointer; }
+    .report-card.available:hover {
+      background: var(--cream);
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+    .report-card.available:hover .report-num { color: var(--rust); }
+    .report-card.upcoming { opacity: 0.42; cursor: default; }
+
+    .report-num {
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--ink-faint);
+      line-height: 1;
+      padding-top: 3px;
+      transition: color 0.15s;
+      text-align: right;
+    }
+    .report-body { min-width: 0; }
+    .report-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .report-title em { font-style: italic; color: var(--ink-soft); }
+    .report-desc {
+      font-size: 0.8rem;
+      color: var(--ink-faint);
+      line-height: 1.55;
+    }
+    .report-card.available .report-title::after {
+      content: ' \2192';
+      font-style: normal;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      color: var(--rust-light);
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+    .report-card.available:hover .report-title::after { opacity: 1; }
+
+    /* BADGES */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.62rem;
+      font-weight: 500;
+      font-family: var(--sans);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: var(--r-sm);
+      padding: 3px 7px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .badge-t { background: var(--rust-pale); color: var(--rust); }
+    .badge-p { background: var(--sage-pale); color: var(--sage); }
+    .badge-coming { background: var(--cream-dark); color: var(--ink-faint); font-size: 0.58rem; }
+
+    /* FOOTER */
+    .site-footer {
+      margin-top: 80px;
+      padding: 40px 0 60px;
+      border-top: 1px solid var(--line);
+    }
+    .footer-note {
+      font-size: 0.78rem;
+      color: var(--ink-faint);
+      line-height: 1.7;
+      max-width: 520px;
+    }
+    .footer-note strong { color: var(--ink-soft); font-weight: 500; }
+
+    /* STATES */
+    .state-msg {
+      padding: 48px 0;
+      text-align: center;
+      color: var(--ink-faint);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 520px) {
+      .wrap { padding: 0 16px; }
+      .site-header { padding: 48px 0 40px; }
+      .report-card { grid-template-columns: 36px 1fr auto; gap: 0 12px; }
+      .report-num { font-size: 1.25rem; }
+      .part-section { margin-top: 40px; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site-header">
+    <p class="header-eyebrow">Serie &middot; 23 report teorico-pratici</p>
+    <h1 class="header-title">La mente di un bambino<br><em>di due, tre anni</em></h1>
+    <p class="header-subtitle">Un percorso per capire come pensa, come ascolta, come sente &mdash;<br>e come arrivare davvero a lui.</p>
+    <p class="header-intro">Ogni report si pu&ograve; leggere da solo. L&rsquo;ordine &egrave; consigliato, non obbligatorio. I report teorici spiegano cosa succede nella sua mente; quelli pratici, intercalati, traducono quei concetti in cose concrete da fare oggi.</p>
+    <div class="legend">
+      <div class="legend-item">
+        <span class="badge badge-t">T</span>
+        <span>Teorico &mdash; il quadro scientifico</span>
+      </div>
+      <div class="legend-item">
+        <span class="badge badge-p">P</span>
+        <span>Pratico &mdash; strumenti e frasari</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="state-msg">Caricamento in corso&hellip;</div>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-note">
+      <strong>Una nota sul metodo.</strong> Su questi temi le scuole di pensiero non sono unanimi. Le neuroscienze affettive degli ultimi vent&rsquo;anni hanno spostato l&rsquo;ago verso approcci di co-regolazione e mentalizzazione, ma c&rsquo;&egrave; ancora dissenso su molti dettagli &mdash; e su alcuni punti grossi. Ogni report segnala dove c&rsquo;&egrave; accordo e dove c&rsquo;&egrave; dibattito. Niente ricette universali, niente toni colpevolizzanti.
+    </p>
+  </footer>
+
+</div>
+<script>
+  const PARTS = [
+    { id: "I",   label: "Parte I",   title: "Le fondamenta",                     desc: "Come \u00e8 fatto, cosa lo muove, come vede il mondo." },
+    { id: "II",  label: "Parte II",  title: "La sua comunicazione",              desc: "I suoi messaggi, espliciti e nascosti." },
+    { id: "III", label: "Parte III", title: "La tua comunicazione verso di lui",  desc: "Parlare in un modo che arrivi davvero." },
+    { id: "IV",  label: "Parte IV",  title: "Limiti, \u201cno\u201d, severit\u00e0", desc: "Come lui percepisce i limiti e come darli bene." },
+    { id: "V",   label: "Parte V",   title: "Ricettivit\u00e0, emozioni, tempesta", desc: "Quando ascolta, come sente, come sopravvivi alla crisi." },
+    { id: "VI",  label: "Parte VI",  title: "La cornice e la sintesi",            desc: "Temperamento, attaccamento \u2014 e tutto in un posto solo." },
+  ];
+
+  function badgeHtml(type, available) {
+    if (!available) return '<span class="badge badge-coming">in arrivo</span>';
+    const cls  = type === 'teorico' ? 'badge-t' : 'badge-p';
+    const text = type === 'teorico' ? 'T' : 'P';
+    return '<span class="badge ' + cls + '">' + text + '</span>';
+  }
+
+  function cardHtml(r) {
+    const avail   = r.disponibile === true;
+    const numStr  = String(r.id).padStart(2, '0');
+    const classes = 'report-card ' + (avail ? 'available' : 'upcoming');
+    const inner   =
+      '<div class="report-num">' + numStr + '</div>' +
+      '<div class="report-body">' +
+        '<div class="report-title">' + r.titolo + '</div>' +
+        '<div class="report-desc">' + r.descrizione + '</div>' +
+      '</div>' +
+      '<div>' + badgeHtml(r.tipo, avail) + '</div>';
+    if (avail && r.link) {
+      return '<a href="' + r.link + '" class="' + classes + '" aria-label="Leggi: ' + r.titolo_plain + '">' + inner + '</a>';
+    }
+    return '<div class="' + classes + '" aria-disabled="true">' + inner + '</div>';
+  }
+
+  function renderSections(reports) {
+    const byPart = {};
+    reports.forEach(function(r) {
+      var k = r.parte || "?";
+      if (!byPart[k]) byPart[k] = [];
+      byPart[k].push(r);
+    });
+    return PARTS.map(function(p) {
+      var list  = byPart[p.id] || [];
+      var cards = list.map(cardHtml).join('');
+      return '<section class="part-section" aria-labelledby="part-' + p.id + '">' +
+        '<div class="part-label">' +
+          '<span class="part-number">' + p.label + '</span>' +
+          '<h2 class="part-title" id="part-' + p.id + '">' + p.title + '</h2>' +
+        '</div>' +
+        '<p class="part-description">' + p.desc + '</p>' +
+        '<hr class="part-divider" />' +
+        '<div class="report-list">' + cards + '</div>' +
+        '</section>';
+    }).join('');
+  }
+
+  var main = document.getElementById('main-content');
+
+  fetch('reports.json')
+    .then(function(res) {
+      if (!res.ok) throw new Error('not found');
+      return res.json();
+    })
+    .then(function(data) {
+      main.innerHTML = renderSections(data);
+    })
+    .catch(function() {
+      main.innerHTML =
+        '<div class="state-msg">I report saranno disponibili a breve.<br>' +
+        '<span style="font-size:0.75rem;opacity:0.6">(reports.json non trovato)</span></div>';
+    });
+</script>
+</body>
+</html>
